@@ -1,155 +1,53 @@
-# Contact Keeper API
+# Contact Keeper
 
-This is a Node/Express/MongoDB REST API for contacts that uses JWT authentication. All contact endpoints are protected and each registered user has their own contacts. This is used in my React course on Udemy. It is the API ONLY. The fullstack app can be found [here](https://github.com/Edgaras318/contact-keeper)
+> Full stack MERN contact manager with React hooks, context & JWT authentication. Part of my React course on Udemy.
 
-## Getting Started
+This is the full app. The API can be found [here](https://github.com/bradtraversy/contact_keeper_api) with documented endpoints
 
-```
-  Open the config/default.json file and add your mongoURI and your jwtSecret
-```
+## Usage
+
+Install dependencies
 
 ```bash
-  npm install
-  npm run server # Runs on http://localhost:5000
+npm install
+npm client-install
 ```
 
-# API Usage & Endpoints
+### Mongo connection setup
 
-## Register a User [POST /api/users]
+Edit your /config/default.json file to include the correct MongoDB URI
 
-- Request: Add user and request JSON web token
+### Run Server
 
-  - Headers
+```bash
+npm run dev     # Express & React :3000 & :5000
+npm run server  # Express API Only :5000
+npm run client  # React Client Only :3000
+```
 
-        Content-type: application/json
+# Contact Keeper
 
-  - Body
+> Full stack MERN contact manager with React hooks, context & JWT authentication. Part of my React course on Udemy.
 
-            {
-              "name": "",
-              "email": "",
-              "password": ""
-            }
+This is the full app. The API can be found [here](https://github.com/edgaras318/contact_keeper_api) with documented endpoints
 
-- Response: 200 (application/json)
+## Usage
 
-  - Body
+Install dependencies
 
-          {
-            "token": ""
-          }
+```bash
+npm install
+npm client-install
+```
 
-## Login with a User [POST /api/auth]
+### Mongo connection setup
 
-- Request: Login with credentials to recieve a JSON web token
+Edit your /config/default.json file to include the correct MongoDB URI
 
-  - Headers
+### Run Server
 
-        Content-type: application/json
-
-  - Body
-
-            {
-              "email": "",
-              "password": ""
-            }
-
-- Response: 200 (application/json)
-
-  - Body
-
-          {
-            "token": ""
-          }
-
-## Get Contacts [GET /api/contacts]
-
-- Request: Get all contacts of a specific user
-
-  - Headers
-
-        x-auth-token: YOURJWT
-
-* Response: 200 (application/json)
-
-  - Body
-
-          {
-            "contacts": []
-          }
-
-## Add New Contact [POST /api/contacts]
-
-- Request: Add a new contact
-
-  - Headers
-
-        x-auth-token: YOURJWT
-        Content-type: application/json
-
-  - Body
-
-            {
-              "name": "",
-              "email": "",
-              "phone": "",
-              "type": "" [personal or professional]
-            }
-
-- Response: 200 (application/json)
-
-  - Body
-
-          {
-            "contact": {}
-          }
-
-## Update Contact [PUT /api/contacts/:id]
-
-- Request: Update existing contact
-
-  - Parameters
-
-    - id: 1 (number) - An unique identifier of the contact.
-
-  - Headers
-
-        x-auth-token: YOURJWT
-        Content-type: application/json
-
-  - Body
-
-            {
-              "name": "",
-              "email": "",
-              "phone": "",
-              "type": "" [personal or professional]
-            }
-
-- Response: 200 (application/json)
-
-  - Body
-
-          {
-            "contact": {}
-          }
-
-## Delete Contact [DELETE /api/contacts/:id]
-
-- Request: Delete existing contact
-
-  - Parameters
-
-    - id: 1 (number) - An unique identifier of the contact.
-
-  - Headers
-
-        x-auth-token: YOURJWT
-
-* Response: 200 (application/json)
-
-  - Body
-
-          {
-            "msg": "Contact removed"
-          }
+```bash
+npm run dev     # Express & React :3000 & :5000
+npm run server  # Express API Only :5000
+npm run client  # React Client Only :3000
+```
