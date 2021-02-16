@@ -384,20 +384,19 @@ table th {
   margin-right: 0.6rem;
 }
 
-/* Animation (Add After) */
 .item-enter {
   opacity: 0;
 }
 .item-enter-active {
   opacity: 1;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 .item-exit {
   opacity: 1;
 }
 .item-exit-active {
   opacity: 0;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 
 /* Mobile Styles */
