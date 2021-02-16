@@ -43,7 +43,8 @@ const Register = props => {
   };
 
   return (
-    isAuthenticated && (
+    isAuthenticated ||
+    (isAuthenticated !== null && (
       <div className='form-container'>
         <h1>
           Account <span className='text-primary'>Register</span>
@@ -98,7 +99,7 @@ const Register = props => {
           />
         </form>
       </div>
-    )
+    ))
   );
 };
 

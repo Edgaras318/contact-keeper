@@ -42,7 +42,8 @@ const Login = props => {
   };
 
   return (
-    isAuthenticated && (
+    isAuthenticated ||
+    (isAuthenticated !== null && (
       <div className='form-container'>
         <h1>
           Account <span className='text-primary'>Login</span>
@@ -77,7 +78,7 @@ const Login = props => {
           />
         </form>
       </div>
-    )
+    ))
   );
 };
 
